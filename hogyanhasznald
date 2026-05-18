@@ -1,0 +1,29 @@
+#Hozzáadaás
+curl -X POST http://localhost:8080/api/recipes \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Palacsinta",
+  "description": "Finom magyaros desszert",
+  "ingredients": [
+    {"name": "Liszt", "amount": "25 dkg"},
+    {"name": "Tej", "amount": "5 dl"}
+  ]
+}'
+
+#lekérdezés
+curl -X GET http://localhost:8080/api/recipes
+
+#update
+curl -X PUT http://localhost:8080/api/recipes/1 \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Lekváros Palacsinta",
+  "description": "Baracklekvárral töltve",
+  "ingredients": [
+    {"name": "Kész palacsintatészta", "amount": "10 db"},
+    {"name": "Baracklekvár", "amount": "1 üveg"}
+  ]
+}'
+
+#törlés
+curl -X DELETE http://localhost:8080/api/recipes/1
