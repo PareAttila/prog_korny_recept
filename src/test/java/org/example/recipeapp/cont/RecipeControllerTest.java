@@ -73,7 +73,7 @@ class RecipeControllerTest {
 
     @Test
     void delete_ShouldReturnNoContent() throws Exception {
-        doNothing().when(recipeService.deleteRecipe(1L));
+        doNothing().when(recipeService).deleteRecipe(1L);
 
         mockMvc.perform(delete("/api/recipes/1"))
                 .andExpect(status().isNoContent());
